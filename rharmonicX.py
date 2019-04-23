@@ -142,13 +142,13 @@ def grafico_soma():
     primo = inicio_row + 1
     separacao = 5
 
-    lab_graf_w = tk.Label(janela, text='Sinal Resultante')
+    lab_graf_w = tk.Label(janela, text='Resulting Signal')
     lab_graf_w.grid(sticky='WE', row = primo -1 , column = i + 4)
     
     w = tk.Canvas(janela, width = 300, height = 100, bg='white')
     w.grid(sticky='', row = primo, column = i + 4, rowspan = separacao)
 
-    lab_graf_y = tk.Label(janela, text='Decomposição Harmônica')
+    lab_graf_y = tk.Label(janela, text='Harmonic Decomposition')
     lab_graf_y.grid(sticky='WE', row = primo + separacao + 1 , column = i + 4)
 
     alt_y = 100
@@ -157,7 +157,7 @@ def grafico_soma():
     y = tk.Canvas(janela, width = lar_y, height = alt_y, bg='white')
     y.grid(sticky='', row = primo + separacao + 2, column = i + 4, rowspan = separacao)
 
-    lab_graf_z = tk.Label(janela, text='Espectro Harmônico')
+    lab_graf_z = tk.Label(janela, text='Harmonic Spectrum')
     lab_graf_z.grid(sticky='WE', row = primo + separacao + separacao + 3, column = i + 4)
 
     alt_z = 100
@@ -289,10 +289,10 @@ janela.grid_anchor(anchor='c')
 # 2.0. Barra de menu
 barramenu = tk.Menu(janela)
 arquivo = tk.Menu(barramenu, tearoff=800)
-arquivo.add_command(label="Sobre", command=sobre)
+arquivo.add_command(label="About", command=sobre)
 arquivo.add_separator()
-arquivo.add_command(label="Sair", command=quit)
-barramenu.add_cascade(label="Arquivo", menu=arquivo)
+arquivo.add_command(label="Exit", command=quit)
+barramenu.add_cascade(label="File", menu=arquivo)
 
 janela.config(menu=barramenu)
 
@@ -312,13 +312,13 @@ ent_harmonicas = {}
 chk_harmonicas = {}
 
 
-lab_harm = tk.Label(janela, text='Harmônica')
+lab_harm = tk.Label(janela, text='Harmonic')
 lab_harm.grid(sticky='E', row = inicio_row, column = inicio_col-1)
 
-lab_ampl = tk.Label(janela, text='Amplitude')
+lab_ampl = tk.Label(janela, text='Frequency')
 lab_ampl.grid(sticky='', row = inicio_row, column = inicio_col)
 
-lab_uso = tk.Label(janela, text='Usa?')
+lab_uso = tk.Label(janela, text='On/Off')
 lab_uso.grid(sticky='W', row = inicio_row, column = inicio_col+2)
 
 checkbox = [ tk.IntVar() for x in range(15) ]
@@ -370,7 +370,7 @@ but_reset.grid(sticky = 'WE', row = 1 + ii + y + 3, column = i-1 , columnspan = 
 but_calc_thd = tk.Button(janela, text = "THDs", command = calcula)
 but_calc_thd.grid(sticky = 'WE', row = 1 + ii + y + 3, column = i, columnspan = 3 )
 
-but_grafico = tk.Button(janela, text = "Gráficos", width = 10, command = grafico_soma)
+but_grafico = tk.Button(janela, text = "Graphic Sum", width = 10, command = grafico_soma)
 but_grafico.grid(sticky = 'WE', row = 1 + ii + y + 3, column = i + 3, columnspan = 3)
 
 line = tk.ttk.Separator(janela, orient=tk.VERTICAL)
